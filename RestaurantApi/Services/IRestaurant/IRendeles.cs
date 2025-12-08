@@ -2,5 +2,6 @@
 {
     public interface IRendeles    {
         Task<object> GetAllRendeles();
+        Task<object> GetAllRendelesWithCard();
     }
 }

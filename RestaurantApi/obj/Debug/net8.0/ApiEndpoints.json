@@ -10,6 +10,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RestaurantApi.Controllers.RendelesController",
+    "Method": "GetAllRendelesWithCard",
+    "RelativePath": "api/Rendeles/withcard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RestaurantApi.Controllers.TermekController",
     "Method": "GetAllTermek",
     "RelativePath": "api/Termek",

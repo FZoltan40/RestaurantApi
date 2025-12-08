@@ -32,5 +32,29 @@ namespace RestaurantApi.Services
                 return responseDto;
             }
         }
+
+        public async Task<object> GetAllRendelesWithCard()
+        {
+            try
+            {
+                var response = await _context.Rendeles
+                    .Where(x=>x.Fizetesimod == "Kártya")
+                    .Select(x=> x.Id)
+                    .ToListAsync();
+
+                responseDto.Message = "Sikeres lekérdezés";
+                responseDto.Result = response;
+
+                return responseDto;
+            }
+            catch (Exception ex)
+            {
+
+                responseDto.Message = ex.Message;
+                responseDto.Result = null;
+
+                return responseDto;
+            }
+        }
     }
 }
