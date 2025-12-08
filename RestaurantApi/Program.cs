@@ -13,6 +13,7 @@ namespace RestaurantApi
 
             builder.Services.AddDbContext<RestaurantContext>();
             builder.Services.AddScoped<IRendeles, RendelesService>();
+            builder.Services.AddScoped<ITermek, TermekService>();
 
             // Add services to the container.
 

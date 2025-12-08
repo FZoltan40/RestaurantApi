@@ -1,24 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RestaurantApi.Models;
 using RestaurantApi.Services.IRestaurant;
-using System.Runtime.InteropServices;
 
 namespace RestaurantApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RendelesController : ControllerBase
+
+    public class TermekController : ControllerBase
     {
-        private readonly IRendeles _rendeles;
-        public RendelesController(IRendeles rendeles)
+        private readonly ITermek _termek;
+        public TermekController(ITermek termek)
         {
-            _rendeles = rendeles;
+            _termek = termek;
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAllRendeles()
+        public async Task<ActionResult> GetAllTermek()
         {
-            var response = await _rendeles.GetAllRendeles();
+            var response = await _termek.GetTermek();
             if (response != null)
             {
                 return Ok(response);
