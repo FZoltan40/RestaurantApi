@@ -1,4 +1,8 @@
 
+using RestaurantApi.Models;
+using RestaurantApi.Services;
+using RestaurantApi.Services.IRestaurant;
+
 namespace RestaurantApi
 {
     public class Program
@@ -6,6 +10,9 @@ namespace RestaurantApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<RestaurantContext>();
+            builder.Services.AddScoped<IRendeles, RendelesService>();
 
             // Add services to the container.
 
