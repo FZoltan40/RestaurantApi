@@ -40,5 +40,17 @@ namespace RestaurantApi.Controllers
             return BadRequest(response);
         }
 
+        [HttpGet("withfood")]
+        public async Task<ActionResult> GetAllRendelesWithFood()
+        {
+            var response = await _rendeles.GetAllRendelesWithFood();
+            if (response != null)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using RestaurantApi.Models;
 using RestaurantApi.Services;
 using RestaurantApi.Services.IRestaurant;
+using System.Text.Json.Serialization;
 
 namespace RestaurantApi
 {
@@ -14,6 +15,8 @@ namespace RestaurantApi
             builder.Services.AddDbContext<RestaurantContext>();
             builder.Services.AddScoped<IRendeles, RendelesService>();
             builder.Services.AddScoped<ITermek, TermekService>();
+
+            builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             // Add services to the container.
 
