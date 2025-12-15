@@ -1,4 +1,5 @@
 
+using Microsoft.EntityFrameworkCore;
 using RestaurantApi.Models;
 using RestaurantApi.Services;
 using RestaurantApi.Services.IRestaurant;
@@ -12,9 +13,19 @@ namespace RestaurantApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<RestaurantContext>();
+            builder.Services.AddDbContext<RestaurantContext>(
+                option => 
+                    {
+                        var ConnectionString = builder.Configuration.GetConnectionString("MySQl");
+                        option.UseMySQL(ConnectionString);
+                    }
+                );
+            
+            
             builder.Services.AddScoped<IRendeles, RendelesService>();
             builder.Services.AddScoped<ITermek, TermekService>();
+
+
 
             builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
