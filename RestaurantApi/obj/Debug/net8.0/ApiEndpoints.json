@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "RestaurantApi.Controllers.KapcsoloController",
+    "Method": "PostRelation",
+    "RelativePath": "api/Kapcsolo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRelationDto",
+        "Type": "RestaurantApi.Models.Dtos.AddRelationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RestaurantApi.Controllers.RendelesController",
     "Method": "GetAllRendeles",
     "RelativePath": "api/Rendeles",

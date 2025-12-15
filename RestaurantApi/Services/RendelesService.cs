@@ -8,11 +8,12 @@ namespace RestaurantApi.Services
     public class RendelesService : IRendeles
     {
 		private readonly RestaurantContext _context;
-		ResponseDto responseDto = new ResponseDto();
-		public RendelesService(RestaurantContext conetxt)
-		{
-			_context = conetxt;
-		}
+        private readonly ResponseDto responseDto;
+        public RendelesService(RestaurantContext context, ResponseDto responseDTO)
+        {
+            _context = context;
+            responseDto = responseDTO;
+        }
         public async Task<object> GetAllRendeles()
         {
 			try

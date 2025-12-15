@@ -8,10 +8,11 @@ namespace RestaurantApi.Services
     public class TermekService : ITermek
     {
         private readonly RestaurantContext _context;
-        ResponseDto responseDto = new ResponseDto();
-        public TermekService(RestaurantContext conetxt)
+        private readonly ResponseDto responseDto;
+        public TermekService(RestaurantContext context, ResponseDto responseDTO)
         {
-            _context = conetxt;
+            _context = context;
+            responseDto = responseDTO;
         }
         public async Task<object> GetTermek()
         {

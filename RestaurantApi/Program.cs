@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using RestaurantApi.Models;
+using RestaurantApi.Models.Dtos;
 using RestaurantApi.Services;
 using RestaurantApi.Services.IRestaurant;
 using System.Text.Json.Serialization;
@@ -24,6 +25,8 @@ namespace RestaurantApi
             
             builder.Services.AddScoped<IRendeles, RendelesService>();
             builder.Services.AddScoped<ITermek, TermekService>();
+            builder.Services.AddScoped<IKapcsolo, KapcsoloService>();
+            builder.Services.AddScoped<ResponseDto>();
 
 
 
